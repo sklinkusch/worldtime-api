@@ -166,7 +166,8 @@ const countryList = [
   {
     country: {
       de: "Georgien",
-      en: "Georgia"
+      en: "Georgia",
+      fr: "Géorgie"
     },
     subdiv: [
       {

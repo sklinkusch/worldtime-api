@@ -48,9 +48,10 @@ const tzlist = (lang) => {
       language = "en";
   }
   const languageTzones = tzlistRaw.map((country) => {
-    country.country = country.country[language];
+    let newCountry = Object.assign({}, country);
+    newCountry.country = country.country[language];
     if (country.subdiv) {
-      country.subdiv = country.subdiv.map((subdivision) => {
+      newCountry.subdiv = country.subdiv.map((subdivision) => {
         const { title, extra = undefined } = subdivision;
         const newDiv = {};
         if (typeof title === "string") {
@@ -68,7 +69,7 @@ const tzlist = (lang) => {
         return newDiv;
       });
     }
-    return country;
+    return newCountry;
   });
   const sortedTzList = languageTzones.sort((a, b) => {
     const { country: aCountry, zone: aZone } = a;

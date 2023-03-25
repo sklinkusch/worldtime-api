@@ -133,7 +133,8 @@ const countryList = [
   {
     country: {
       de: "Zypern",
-      en: "Cyprus"
+      en: "Cyprus",
+      fr: "Chypre"
     },
     subdiv: [
       {
@@ -1302,7 +1303,8 @@ const countryList = [
   {
     country: {
       de: "Ukraine",
-      en: "Ukraine"
+      en: "Ukraine",
+      fr: "Ukraine"
     },
     subdiv: [
       {
