@@ -61,13 +61,23 @@ const tzlist = (lang) => {
   const sortedTzList = languageTzones.sort((a, b) => {
     const { country: aCountry, zone: aZone } = a;
     const { country: bCountry, zone: bZone } = b;
-    if (aCountry < bCountry) return -1;
-    if (bCountry < aCountry) return +1;
-    if (aZone < bZone) return -1;
-    if (bZone < aZone) return +1;
-    return 0;
+    const aToBCountry = localeSort(aCountry, bCountry);
+    if (aToBCountry !== 0) return aToBCountry;
+    const aToBZone = localeSort(aZone, bZone);
+    return aToBZone;
   });
   return sortedTzList;
 };
+
+function localeSort(a, b) {
+  const aToB = a.localeCompare(b, "en", { sensitivity: "base" });
+  if (aToB < 0) {
+    return -1;
+  } else if (aToB > 0) {
+    return +1;
+  } else {
+    return 0;
+  }
+}
 
 module.exports = tzlist;
