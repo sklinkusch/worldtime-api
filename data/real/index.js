@@ -1,6 +1,7 @@
 const Africa = require("./Africa");
+const Antarctica = require("./Antarctica");
 
-const tzlistRaw = [...Africa];
+const tzlistRaw = [...Africa, ...Antarctica];
 
 const tzlist = (lang) => {
   let language;
