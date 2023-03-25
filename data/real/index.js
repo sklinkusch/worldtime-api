@@ -10,6 +10,7 @@ const Europe = require("./Europe");
 const Indonesia = require("./Indonesia");
 const MiddleEast = require("./MiddleEast");
 const Oceania = require("./Oceania");
+const Russia = require("./Russia");
 
 const tzlistRaw = [
   ...Africa,
@@ -23,7 +24,8 @@ const tzlistRaw = [
   ...Europe,
   ...Indonesia,
   ...MiddleEast,
-  ...Oceania
+  ...Oceania,
+  ...Russia
 ];
 
 const tzlist = (lang) => {
