@@ -1,7 +1,8 @@
 const Africa = require("./Africa");
 const Antarctica = require("./Antarctica");
+const Australia = require("./Australia");
 
-const tzlistRaw = [...Africa, ...Antarctica];
+const tzlistRaw = [...Africa, ...Antarctica, ...Australia];
 
 const tzlist = (lang) => {
   let language;
@@ -14,7 +15,7 @@ const tzlist = (lang) => {
     default:
       language = "en";
   }
-  return tzlistRaw.map((country) => {
+  const languageTzones = tzlistRaw.map((country) => {
     country.country = country.country[language];
     if (country.subdiv) {
       country.subdiv = country.subdiv.map((subdivision) => {
@@ -37,6 +38,16 @@ const tzlist = (lang) => {
     }
     return country;
   });
+  const sortedTzList = languageTzones.sort((a, b) => {
+    const { country: aCountry, zone: aZone } = a;
+    const { country: bCountry, zone: bZone } = b;
+    if (aCountry < bCountry) return -1;
+    if (bCountry < aCountry) return +1;
+    if (aZone < bZone) return -1;
+    if (bZone < aZone) return +1;
+    return 0;
+  });
+  return sortedTzList;
 };
 
 module.exports = tzlist;
