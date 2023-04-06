@@ -2,7 +2,7 @@ const Africa = require("./Africa");
 const Antarctica = require("./Antarctica");
 const Australia = require("./Australia");
 const Canada = require("./Canada");
-// const Caribbean = require("./Caribbean");
+const Caribbean = require("./Caribbean");
 // const CentralAmerica = require("./CentralAmerica");
 // const CentralAsia = require("./CentralAsia");
 // const EastAsia = require("./EastAsia");
@@ -20,8 +20,8 @@ const tzlistRaw = [
   ...Africa,
   ...Antarctica,
   ...Australia,
-  ...Canada
-  // ...Caribbean,
+  ...Canada,
+  ...Caribbean
   // ...CentralAmerica,
   // ...CentralAsia,
   // ...EastAsia,
