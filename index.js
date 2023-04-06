@@ -4,6 +4,7 @@ const app = express();
 const port = 3600;
 
 const real = require("./data/real/index");
+const ideal = require("./data/ideal/index");
 
 function corsOptions(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -16,6 +17,11 @@ app.use("*", (req, res, next) => corsOptions(req, res, next));
 app.get("/real", (req, res) => {
   const { lang = "en" } = req.query;
   return res.status(200).json(real(lang));
+});
+
+app.get("/ideal", (req, res) => {
+  const { lang = "en" } = req.query;
+  return res.status(200).json(ideal(lang));
 });
 
 app.all("*", (req, res) => {
