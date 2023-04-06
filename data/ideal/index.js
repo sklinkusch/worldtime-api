@@ -10,7 +10,7 @@ const Europe = require("./Europe");
 const Indonesia = require("./Indonesia");
 const MiddleEast = require("./MiddleEast");
 const Oceania = require("./Oceania");
-// const Russia = require("./Russia");
+const Russia = require("./Russia");
 // const SouthAmerica = require("./SouthAmerica");
 // const SouthAsia = require("./SouthAsia");
 // const SouthEastAsia = require("./SouthEastAsia");
@@ -28,8 +28,8 @@ const tzlistRaw = [
   ...Europe,
   ...Indonesia,
   ...MiddleEast,
-  ...Oceania
-  // ...Russia,
+  ...Oceania,
+  ...Russia
   // ...SouthAmerica,
   // ...SouthAsia,
   // ...SouthEastAsia,
